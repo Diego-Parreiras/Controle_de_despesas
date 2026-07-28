@@ -1,5 +1,6 @@
 package com.despesas.controle.models;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -32,7 +33,7 @@ public class Usuario {
     private String senha;
 
     @Column(name = "SALARIO_MENSAL")
-    private Double salarioMensal;
+    private BigDecimal salarioMensal;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Despesa> despesas;

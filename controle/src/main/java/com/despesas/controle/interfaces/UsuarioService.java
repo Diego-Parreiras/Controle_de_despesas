@@ -1,13 +1,16 @@
+package com.despesas.controle.interfaces;
 import com.despesas.controle.models.Usuario;
 
 public interface UsuarioService {
 
-    Usuario criarUsuario(Usuario usuario);
+    void criarUsuario(Usuario usuario);
 
     Usuario buscarUsuario(Long id);
+    
+    Usuario buscarUsuario(String email);
 
-    Usuario atualizarUsuario(Usuario usuario);
+    void atualizarUsuario(Long id, Usuario usuario);
 
-    void deletarUsuario(Long id);
+    void apagarUsuario(Long id);
 
 }

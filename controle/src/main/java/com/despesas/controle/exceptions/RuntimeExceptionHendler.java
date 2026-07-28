@@ -1,4 +1,4 @@
-package com.despesas.controle.exception;
+package com.despesas.controle.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
