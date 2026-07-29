@@ -1,5 +1,6 @@
     package com.despesas.controle.models;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.despesas.controle.enuns.FormaDePagamento;
@@ -31,7 +32,7 @@ public class Despesa {
     private Usuario usuario;
 
     private String descricao;
-    private Double valor;
+    private BigDecimal valor;
     private String categoria;
     private LocalDate dataVencimento;
     private LocalDate registro;
