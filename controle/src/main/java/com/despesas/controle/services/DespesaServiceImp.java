@@ -92,4 +92,16 @@ public class DespesaServiceImp implements DespesaService {
         }
     }
 
+    // O QUE FAZ: Calcula o valor total das despesas dentro de um mês e ano específicos.
+    // COMO FAZ: Constrói dinamicamente a data inicial (primeiro dia do mês) e a data final (último dia do mês) e repassa para a query do repositório, tratando exceções.
+    public BigDecimal calcularTotalDoMes(int mes, int ano) {
+        try {
+            LocalDate dataInicial = LocalDate.of(ano, mes, 1);
+            LocalDate dataFinal = dataInicial.withDayOfMonth(dataInicial.lengthOfMonth());
+            BigDecimal totalCalculado = despesaRepository.calcularTotalDespesasNoPeriodo(dataInicial, dataFinal);
+            return totalCalculado != null ? totalCalculado : BigDecimal.ZERO;
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao calcular o total de despesas do mês. Erro: ", e);
+        }
+    }
 }
